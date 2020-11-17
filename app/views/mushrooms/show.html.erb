@@ -9,7 +9,8 @@
   <li>Ce champignon est <strong>comestible</strong> !</li>
   <% else %>
   <li><strong>Il ne faut pas manger ce champignon !</strong></li>
-<% end %>
+<% end %> <br>
+<%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
 </ul>
 
 <%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %>
