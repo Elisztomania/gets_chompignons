@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
 puts 'Cleaning database...'
 Mushroom.destroy_all
 User.destroy_all
@@ -14,8 +16,7 @@ puts 'Creating user...'
 user = User.create(username:"Elisztomania", email:"elisztomania@gmail.com", password:"totooo")
 
 puts 'Creating mushrooms...'
-amanite = { name: "Amanite Tue-Mouches", content: "L’Amanite tue-mouche provoque de violents troubles digestifs et nerveux, qui se manifestent par un état d’ivresse suivi d’un profond sommeil.", location: "Bois de feuillus", eatable: false, cap: "Convexe"  }
-amanite.photo.attach(io: File.open('../app/assets/images/amanite.jpg'), filename: 'amanite.jpg', content_type: 'image/jpg')
+amanite = { name: "Amanite Tue-Mouches", content: "L’Amanite tue-mouche provoque de violents troubles digestifs et nerveux, qui se manifestent par un état d’ivresse suivi d’un profond sommeil.", location: "Bois de feuillus", eatable: false, cap: "Convexe", photo: ('../app/assets/images/amanite.jpg')  }
 chanterelle = { name: "Chanterelle Jaune", content: "Trop bon champignons à cuisiner", location: "Bois de conifères", eatable: true, cap: "Entonnoir"  }
 coprin = { name: "Coprin Chevelu", content: "Le coprin chevelu est un très bon comestible cru ou cuit, mais à consommer jeune, avant qu’il noircisse.", location: "Lisières", eatable: true, cap: "Cylindrique"  }
 xylaire = { name: "Xylaire Polymorphe", content: "La surface paraît couverte de minuscules verrues et les formes sont parfois irrégulières.", location: "Bois pourrissant", eatable: false, cap: "Verruqueuse"  }
@@ -24,6 +25,7 @@ russule = { name: "Russule Jolie", content: "La chair, blanche et ferme, a une s
 
 [amanite, chanterelle, coprin, xylaire, hebelome, russule].each do |attributes|
   mushroom = Mushroom.new(attributes)
+  # attributes.photo.attach(io: File.open("../app/assets/images/#{attributes}.jpg"), filename: "#{attributes}.jpg", content_type: 'image/jpg')
   mushroom.user = user
   mushroom.save!
   puts "Created #{mushroom.name}"
