@@ -11,7 +11,7 @@ User.destroy_all
 
 puts 'Creating user...'
 
-user = User.create(username:"Elisztomania", email:"alisztomania@gmai.com", password:"totooo")
+user = User.create(username:"Elisztomania", email:"elisztomania@gmail.com", password:"totooo")
 
 puts 'Creating mushrooms...'
 amanite = { name: "Amanite Tue-Mouches", content: "L’Amanite tue-mouche provoque de violents troubles digestifs et nerveux, qui se manifestent par un état d’ivresse suivi d’un profond sommeil.", location: "Bois de feuillus", eatable: false, cap: "Convexe"  }
