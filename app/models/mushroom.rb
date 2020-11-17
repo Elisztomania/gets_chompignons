@@ -1,8 +1,8 @@
 class Mushroom < ApplicationRecord
   belongs_to :user
 
-  CAP = %w(Convexe Entonnoir Globuleux Plat Déprimé Mamelonné)
-  LOCATIONS = ['Bois de feuillus', 'Bois de conifères', 'Bois de feuillus et conifères', 'Lisières', 'Prés', 'Souches', 'Mousse', 'Bois pourrissant', 'Sol pas ou peu calcaire', 'Sol calcaire']
+  CAP = %w(Convexe Entonnoir Globuleux Plat Déprimé Mamelonné Cylindrique Verruqueuse)
+  LOCATIONS = ['Bois de feuillus', 'Bois de conifères', 'Bois de feuillus et conifères', 'Lisières', 'Prés', 'Souches', 'Mousse', 'Bois pourrissant', 'Sol pas ou peu calcaire', 'Sol calcaire', 'Forêt enchantée']
 
   validates :name, presence: true, uniqueness: true
   validates :content, presence: true
