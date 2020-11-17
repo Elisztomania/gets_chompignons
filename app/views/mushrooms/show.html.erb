@@ -1,5 +1,11 @@
 <h2><%= @mushroom.name %></h2>
 
+<hr>
+
+<%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
+
+<hr>
+
 <ul>
   <li>Description : <%= @mushroom.content %></li>
   <li>Où pousse-t-il ? : <%= @mushroom.location %></li>

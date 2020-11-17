@@ -41,6 +41,6 @@ class MushroomsController < ApplicationController
   end
 
   def mushroom_params
-    params.require(:mushroom).permit(:name, :content, :location, :eatable, :cap, :user_id)
+    params.require(:mushroom).permit(:name, :content, :location, :eatable, :cap, :user_id, :photo)
   end
 end
