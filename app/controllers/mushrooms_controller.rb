@@ -15,6 +15,7 @@ class MushroomsController < ApplicationController
 
   def create
     @mushroom = Mushroom.new(mushroom_params)
+    @mushroom.user = current_user
     if @mushroom.save
       redirect_to @mushroom, notice: 'Mushroom was successfully created 🍄'
     else
