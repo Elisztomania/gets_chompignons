@@ -1,7 +1,7 @@
 <%= simple_form_for @mushroom do |f| %>
     <%= f.input :name %>
     <%= f.input :content %>
-    <%= f.input :location %>
+    <%= f.input :location, collection: Mushroom::LOCATIONS %>
 
     <%= f.input :cap, collection: Mushroom::CAP %>
 
