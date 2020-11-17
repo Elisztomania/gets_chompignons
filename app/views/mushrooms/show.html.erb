@@ -3,8 +3,13 @@
 <ul>
   <li>Description : <%= @mushroom.content %></li>
   <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
-  <li>Comestible ? <%= @mushroom.eatable %></li>
   <li>Forme du chapeau : <%= @mushroom.cap %></li>
+
+  <% if @mushroom.eatable %>
+  <li>Ce champignon est <strong>comestible</strong> !</li>
+  <% else %>
+  <li><strong>Il ne faut pas manger ce champignon !</strong></li>
+<% end %>
 </ul>
 
 <%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %>

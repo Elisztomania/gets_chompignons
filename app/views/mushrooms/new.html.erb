@@ -1,0 +1,25 @@
+<div class="container">
+
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Créer un chompignon</h1>
+      <%= simple_form_for @mushroom do |f| %>
+        <%= f.input :name %>
+        <%= f.input :content %>
+        <%= f.input :location %>
+
+        <%= f.input :cap, collection: Mushroom::CAP %>
+
+        <% f.object.new_record? %>
+          <div class="checkbox">
+            <label>
+              <%= f.check_box :eatable %> Comestible
+            </label>
+          </div>
+        <!-- <%= f.input :photo, as: :file %> -->
+        <%= f.button :submit, class: 'btn btn-ghost' %>
+      <% end %>
+    </div>
+  </div>
+</div>
