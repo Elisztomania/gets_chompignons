@@ -1,5 +1,5 @@
-<h3>Add a review</h3>
-<%= simple_form_for [mushroom, review] do |f| %>
+<h3>Ajouter un avis sur ce chompignon</h3>
+<%= simple_form_for [@mushroom, @review] do |f| %>
   <%= f.input :rating, collection: 0..5 %>
   <%= f.input :content %>
   <%= f.submit class: "btn btn-primary"%>
