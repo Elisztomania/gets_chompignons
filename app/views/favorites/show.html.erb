@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Mes chompignons favoris !</h1>
+   <% @fav_champ.each do |mushroom| %>
+   <hr>
+    <% if mushroom.photo.attached? %>
+      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
+    <% end %>
+    <%= link_to mushroom.name, mushroom %>
+    <br>
+  <hr>
+  <% end %>
+
+</div>

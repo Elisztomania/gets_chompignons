@@ -11,6 +11,7 @@ class MushroomsController < ApplicationController
   end
 
   def show
+    @favorite = @mushroom.favorites.find_by(user: current_user)
   end
 
   def create
@@ -35,9 +36,7 @@ class MushroomsController < ApplicationController
   end
 
   def show_my
-    @mushrooms = Mushroom.all
-    @user_id = current_user.id
-    @mymushrooms = Mushroom.where(user_id: @user_id)
+    @mymushrooms = Mushroom.where(user: current_user)
   end
 
   private
