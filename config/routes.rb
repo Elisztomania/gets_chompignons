@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :mushrooms, only: [:index, :show, :create, :new, :update, :edit] do
       resources :reviews, only: [:create, :new]
     end
-
+    resources :reviews, only: :destroy
 end

@@ -46,7 +46,10 @@
     </ul>
   <% end %>
 
-<%= link_to 'Ajouter une review', new_mushroom_review_path(@mushroom.id), class: "btn btn-primary" %>
+<% if current_user != nil %>
+  <%= link_to 'Ajouter une review', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
+<% end %>
+
 
 <hr>
 
