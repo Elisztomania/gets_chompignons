@@ -26,7 +26,6 @@ russule = { name: "Russule Jolie", content: "La chair, blanche et ferme, a une s
 [amanite, chanterelle, coprin, xylaire, hebelome, russule].each do |attributes|
   image = attributes[:name].split(" ")[0].parameterize
   source = File.open("app/assets/images/#{image}.jpg")
-  p source
   mushroom = Mushroom.new(attributes)
   mushroom.photo.attach(io: source, filename: "#{image}.jpg", content_type: 'image/jpg')
   mushroom.user = user
