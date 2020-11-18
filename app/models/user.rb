@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :mushrooms, through: :favorites, dependent: :destroy
+  has_many :mushrooms, dependent: :destroy
   has_many :favorites, dependent: :destroy
   validates :username, uniqueness: true
 end
