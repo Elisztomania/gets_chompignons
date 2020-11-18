@@ -1,6 +1,6 @@
 class Mushroom < ApplicationRecord
   belongs_to :user
-  has_many :favorites, through: :favorites
+  has_many :favorites
   has_one_attached :photo
 
   CAP = %w(Convexe Entonnoir Globuleux Plat Déprimé Mamelonné Cylindrique Verruqueuse)

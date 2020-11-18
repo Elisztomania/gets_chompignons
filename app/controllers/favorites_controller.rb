@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_mushroom, only: [:create, :destroy]
+  before_action :set_mushroom, only: [:create]
 
   def create
     @favorite = Favorite.new
@@ -14,15 +14,14 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    # @favorite.mushroom = @mushroom
+    @favorite = Favorite.find(params[:id])
     @favorite.destroy
-    redirect_to mushroom_path(@mushroom), notice: 'Vous avez supprimé ce 🍄 à vos favoris'
+    redirect_to mushroom_path(@favorite.mushroom), notice: 'Vous avez supprimé ce 🍄 à vos favoris'
   end
 
   def show
     @mushrooms = Mushroom.all
-    @user_id = current_user.id
-    @favorites = Mushroom.where(user_id: @user_id)
+    @favorite = Favorite.find_by(user: current_user)
   end
 
   private
