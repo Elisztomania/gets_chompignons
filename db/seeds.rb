@@ -10,6 +10,7 @@ require 'open-uri'
 puts 'Cleaning database...'
 Mushroom.destroy_all
 User.destroy_all
+Review.destroy_all
 
 puts 'Creating user...'
 
