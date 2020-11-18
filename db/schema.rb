@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2020_11_18_113638) do
     t.index ["user_id"], name: "index_mushrooms_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "mushroom_id", null: false
+    t.index ["mushroom_id"], name: "index_reviews_on_mushroom_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -74,4 +83,5 @@ ActiveRecord::Schema.define(version: 2020_11_18_113638) do
   add_foreign_key "favorites", "mushrooms"
   add_foreign_key "favorites", "users"
   add_foreign_key "mushrooms", "users"
+  add_foreign_key "reviews", "mushrooms"
 end
