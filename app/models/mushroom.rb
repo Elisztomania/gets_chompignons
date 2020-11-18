@@ -1,5 +1,6 @@
 class Mushroom < ApplicationRecord
   belongs_to :user
+  has_many :reviews, dependente: :destroy
   has_one_attached :photo
 
   CAP = %w(Convexe Entonnoir Globuleux Plat Déprimé Mamelonné Cylindrique Verruqueuse)
