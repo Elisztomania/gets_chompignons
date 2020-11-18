@@ -19,10 +19,10 @@ class FavoritesController < ApplicationController
     redirect_to mushroom_path(@favorite.mushroom), notice: 'Vous avez supprimé ce 🍄 à vos favoris'
   end
 
-  def show
-    @mushrooms = Mushroom.all
-    @favorite = Favorite.find_by(user: current_user)
-  end
+  # def show
+  #   @mushrooms = Mushroom.all
+  #   @favorite = Favorite.find_by(user: current_user)
+  # end page with all the favorites creating by one user
 
   private
 
