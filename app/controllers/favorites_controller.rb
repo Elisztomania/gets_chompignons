@@ -7,13 +7,16 @@ class FavoritesController < ApplicationController
     @favorite.mushroom = @mushroom
 
     if @favorite.save
-      redirect_to @mushroom, notice: 'Vous avez ajouté un 🍄 à vos favoris'
+      redirect_to @mushroom, notice: 'Vous avez ajouté ce 🍄 à vos favoris'
     else
       render :new
     end
   end
 
   def destroy
+    # @favorite.mushroom = @mushroom
+    @favorite.destroy
+    redirect_to mushroom_path(@mushroom), notice: 'Vous avez supprimé ce 🍄 à vos favoris'
   end
 
   def show
@@ -25,6 +28,6 @@ class FavoritesController < ApplicationController
   private
 
   def set_mushroom
-    @mushroom = Mushroom.find(params[:id])
+    @mushroom = Mushroom.find(params[:mushroom_id])
   end
 end
