@@ -22,7 +22,7 @@
           <%= image_tag 'avatar_chomp.jpg', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mes chompignons", my_mushrooms_path, class: "dropdown-item" %>
-            <%= link_to "Mes favoris", "#", class: "dropdown-item" %>
+            <%= link_to "Mes favoris", mushrooms_favorites_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

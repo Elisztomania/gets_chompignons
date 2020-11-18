@@ -20,8 +20,12 @@ class FavoritesController < ApplicationController
   end
 
   def show
-    @mushrooms = Mushroom.all
     @favorites = Favorite.where(user: current_user)
+    @fav_champ = []
+    @favorites.each do |fav|
+      champ = Mushroom.find(fav.mushroom_id)
+      @fav_champ << champ
+    end
   end
 
     # @mushrooms = Mushroom.all
