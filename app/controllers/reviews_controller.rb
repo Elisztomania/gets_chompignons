@@ -8,8 +8,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.mushroom = @mushroom
+    @review.user = current_user
     if @review.save
-      redirect_to mushroom_path(@mushroom)
+      redirect_to @mushroom
     else
       render :new
     end
