@@ -11,6 +11,7 @@ class MushroomsController < ApplicationController
   end
 
   def show
+    @favorite = Favorite.new
   end
 
   def create
