@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_mushroom, only: [:new, :create]
+  before_action :set_mushroom, only: [:new, :create, :edit]
 
   def new
     @review = Review.new
@@ -12,6 +12,17 @@ class ReviewsController < ApplicationController
       redirect_to mushroom_path(@mushroom)
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to mushroom_path(@mushroom), notice: 'Votre avis a été correctement modifié.'
+    else
+      render :edit
     end
   end
 
