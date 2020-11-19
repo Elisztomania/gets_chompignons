@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.mushroom = @mushroom
     @review.user = current_user
+
     if @review.save
       redirect_to @mushroom
     else
