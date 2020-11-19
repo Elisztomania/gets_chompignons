@@ -1,8 +1,22 @@
-// .carousel-item {
+//.carousel-item {
 //   border-radius: 25%;
 // }
 
-// .container {
-//   padding: 50px;
-//   border-radius: 10px;;
-// }
+.carousel-inner {
+    background-color: rgba(204, 181, 181, 0.233)
+ }
+
+.carousel-item img{
+    width: auto;
+    height: 400px;
+    max-height: 400px;
+    margin: auto; 
+    display: block;
+    // border-radius: 50%;
+}
+
+.container {
+    padding-left: 60px;
+    padding-right: 60px;
+    border-radius: 5px;
+}
