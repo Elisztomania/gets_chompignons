@@ -1,59 +1,20 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+<h1 class="title">Hover over the cards</h1>
 
-<a id="view-code" href="https://codepen.io/virgilpana/pen/RNYQwB" target="_blank">VIEW CODE</a>
-
-<div id="make-3D-space">
-    <div id="product-card">
-        <div id="product-front">
-          <div class="shadow"></div>
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
-            <div class="image_overlay"></div>
-            <div id="view_details">View details</div>
-            <div class="stats">
-                <div class="stats-container">
-                    <span class="product_price">$39</span>
-                    <span class="product_name">Adidas Originals</span>
-                    <p>Men's running shirt</p>
-
-                    <div class="product-options">
-                    <strong>SIZES</strong>
-                    <span>XS, S, M, L, XL, XXL</span>
-                    <strong>COLORS</strong>
-                    <div class="colors">
-                        <div class="c-blue"><span></span></div>
-                        <div class="c-red"><span></span></div>
-                        <div class="c-white"><span></span></div>
-                        <div class="c-green"><span></span></div>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div id="product-back">
-          <div class="shadow"></div>
-            <div id="carousel">
-                <ul>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large2.png" alt="" /></li>
-                    <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt-large3.png" alt="" /></li>
-                </ul>
-                <div class="arrows-perspective">
-                    <div class="carouselPrev">
-                        <div class="y"></div>
-                      <div class="x"></div>
-                    </div>
-                    <div class="carouselNext">
-                        <div class="y"></div>
-                      <div class="x"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="flip-back">
-              <div id="cy"></div>
-                <div id="cx"></div>
-            </div>
-        </div>
-    </div>
+<div id="app" class="container">
+  <card data-image="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Canyons</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Beaches</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Trees</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
+  <card data-image="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=">
+    <h1 slot="header">Lakes</h1>
+    <p slot="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </card>
 </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
