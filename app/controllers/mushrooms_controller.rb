@@ -4,6 +4,7 @@ class MushroomsController < ApplicationController
 
   def index
     @mushrooms = Mushroom.all
+    @top5 = top5
   end
 
   def new
@@ -12,6 +13,7 @@ class MushroomsController < ApplicationController
 
   def show
     @favorite = @mushroom.favorites.find_by(user: current_user)
+    @average = @mushroom.average_rating
   end
 
   def create
@@ -37,6 +39,11 @@ class MushroomsController < ApplicationController
 
   def show_my
     @mymushrooms = Mushroom.where(user: current_user)
+  end
+
+  def top5
+    @mushrooms = Mushroom.all
+    @top5 = @mushrooms.sort_by {|mushroom| -mushroom.average_rating }.first(5)
   end
 
   private

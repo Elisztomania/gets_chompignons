@@ -8,14 +8,20 @@
 
 <div class="container">
 
+  <% @top5.each do |mushroom| %>
+   <hr>
+    <%= link_to mushroom.name, mushroom %>
+    <%= mushroom.average_rating %>
+    <% end %>
+
    <% @mushrooms.each do |mushroom| %>
    <hr>
     <% if mushroom.photo.attached? %>
       <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
     <% end %>
     <%= link_to mushroom.name, mushroom %>
+     - <%= mushroom.average_rating %> ⭐️
     <br>
   <hr>
   <% end %>
-
 </div>
