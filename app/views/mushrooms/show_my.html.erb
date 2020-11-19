@@ -8,42 +8,23 @@
    <% @mymushrooms.each do |mushroom| %>
 
     <div class="card-my-chomps">
+
       <%= link_to mushroom do %>
 
-    <% if mushroom.photo.attached? %>
-      <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
-    <% end %>
+        <% if mushroom.photo.attached? %>
+          <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
+        <% end %>
 
-    <div class="card-description-my-chomps">
-      <%= mushroom.name %>
-      <%= link_to '✏️', edit_mushroom_path(mushroom) %>
-    </div>
+        <div class="card-description-my-chomps">
+          <%= mushroom.name %>
+         <!-- <%= link_to '✏️', edit_mushroom_path(mushroom) %> -->
+          <%= link_to edit_mushroom_path(mushroom) do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+        </div>
 
-   </div>
   <% end %>
+   </div>
   <% end %>
 </div>
 
-
-
-
- <!-- <div class="card-list-my-chomps">
-
-  <h1>Mes chompignons favoris ! <i class="fas fa-heart"></i></h1>
-
-      <% @fav_champ.each do |mushroom| %>
-
-    <div class="card-my-chomps">
-      <%= link_to mushroom do %>
-      <% if mushroom.photo.attached? %>
-        <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
-      <% end %>
-
-
-      <div class="card-description-my-chomps">
-        <%= link_to mushroom.name, mushroom %>
-      </div>
-    <% end %>
-    </div>
-      <% end %>
-  </div> -->
