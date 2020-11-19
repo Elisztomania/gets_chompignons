@@ -11,7 +11,9 @@
       <% @top5.each_with_index do |mushroom, index| %> 
         <div class="carousel-item <%="active" if index == 0 %> ">
           <%= cl_image_tag mushroom.photo.key, height: 300, width: 300, crop: :fill %>
+
           <%= mushroom.name %>
+          
         </div>
       <% end %>  
     
