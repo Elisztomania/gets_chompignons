@@ -15,8 +15,12 @@
     color: black;
     text-decoration: none;
     background-color: transparent;
-    font-size: 15px;
-    font-family: Montserrat;
+    font-size: 20px;
+    // font-family: Montserrat;
     font-weight: 400;
 }
 
+.center {
+  height: 70px;
+  line-height: 70px; /* same as height! */
+}
