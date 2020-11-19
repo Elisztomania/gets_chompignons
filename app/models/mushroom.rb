@@ -14,8 +14,9 @@ class Mushroom < ApplicationRecord
   validates :user, presence: true
 
   def average_rating
-    return unless reviews != 0
-
+    if reviews.count == 0
+      return 0
+    else
     nbreviews = 0
     sum = 0
     reviews.each do |review|
@@ -23,5 +24,6 @@ class Mushroom < ApplicationRecord
       nbreviews += 1
     end
       sum.fdiv(nbreviews).to_i unless nbreviews.zero?
+    end
   end
 end
