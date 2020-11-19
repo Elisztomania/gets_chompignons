@@ -317,17 +317,11 @@ input {
 
 .col-md-8 {
   background-color: white;
-
   margin-top: 50px;
-  margin-left: 150px;
-    margin-right: 150px;
-
-  padding-right: 250px;
-    padding-left: 250px;
-
-
-  margin: 25px;
-  padding: 35px;
+  margin-left: 350px;
+  margin-right: 350px;
+  padding-right: 350px;
+  padding-left: 350px;
 }
 
 .input-form {
@@ -335,7 +329,9 @@ input {
 }
 
 
-
+.container-new {
+  border: 1px, solid, black;
+}
 
 
 

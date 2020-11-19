@@ -1,48 +1,22 @@
 <%= simple_form_for @mushroom do |f| %>
   <div class="name-form">
-    <%= f.input :name %>
+    <%= f.input :name, label: 'Nom'  %>
     </div>
-    <%= f.input :content %>
-    <%= f.input :location, collection: Mushroom::LOCATIONS %>
+    <%= f.input :content, label: 'Description'  %>
+    <%= f.input :location, collection: Mushroom::LOCATIONS, label: 'Localisation'  %>
 
-    <%= f.input :cap, collection: Mushroom::CAP %>
+    <%= f.input :cap, collection: Mushroom::CAP, label: 'Type de chapeau'  %>
 
     <% f.object.new_record? %>
       <div class="checkbox">
         <label>
-          <%= f.check_box :eatable %> Comestible
+          <%= f.check_box :eatable %> Comestible ?
         </label>
       </div>
       <br>
       <%= f.input :photo, as: :file %>
       <br>
-    <%= f.button :submit, class: 'btn btn-flat' %>
+    <%= f.button :submit, class: 'btn btn-flat', label: 'Créer mon chompignon' %>
 <% end %>
 
-<style>
 
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-</style>
