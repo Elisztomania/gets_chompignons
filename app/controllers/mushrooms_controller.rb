@@ -11,10 +11,13 @@ class MushroomsController < ApplicationController
   end
 
   def show
+    @favorite = @mushroom.favorites.find_by(user: current_user)
+    @average = @mushroom.average_rating
   end
 
   def create
     @mushroom = Mushroom.new(mushroom_params)
+    @mushroom.user = current_user
     if @mushroom.save
       redirect_to @mushroom, notice: 'Mushroom was successfully created 🍄'
     else
@@ -33,6 +36,11 @@ class MushroomsController < ApplicationController
     end
   end
 
+  def show_my
+    @mymushrooms = Mushroom.where(user: current_user)
+  end
+
+
   private
 
   def set_mushroom
@@ -40,6 +48,6 @@ class MushroomsController < ApplicationController
   end
 
   def mushroom_params
-    params.require(:mushroom).permit(:name, :content, :location, :eatable, :cap, :user_id)
+    params.require(:mushroom).permit(:name, :content, :location, :eatable, :cap, :user_id, :photo)
   end
 end

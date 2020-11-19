@@ -1,14 +1,17 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg'  %>);">
-  <div class="container">
-    <h1>Gets.Chompignons</h1>
-    <p>Les champignons bons pour le morale !</p>
-    <%= link_to 'Ajouter un chompignon', new_mushroom_path(@mushroom), class: "btn btn-ghost" %>
-  </div>
-</div>
+<h1>Tous les champigons</h1>
+
+<!-- Banner différente de la home avec CTA -->
+
+<%= link_to 'Créer un chompignon', new_mushroom_path(@mushroom), class: "btn btn-ghost" %>
 
    <% @mushrooms.each do |mushroom| %>
-      <%= link_to mushroom.name, mushroom %>
-      <br>
+   <hr>
+    <% if mushroom.photo.attached? %>
+      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
+    <% end %>
+    <%= link_to mushroom.name, mushroom %>
+     - <%= mushroom.average_rating %> ⭐️
+    <br>
+  <hr>
   <% end %>
-
-
+</div>

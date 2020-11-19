@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Authentication</title>
+    <title>Gets Chompignons</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,22 +12,20 @@
   </head>
 
   <body>
-    <%= render 'shared_b/navbar' %>
+
+
+    <%= render './shared/navbar' %>
+
+    <%= yield %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%# <%= yield %> 
 
-    <br>
-    
-    <div class="container-carousel">
-    <%= render 'shared_b/carousel' %>
-    </div>
 
-    <br>
+    <script src="login.js"> </script>
+    <script src="test_card.js"> </script>
 
-    <div class="container-footer">
-    <%= render 'shared_b/footer' %>
-    </div>
 
   </body>
+
 </html>

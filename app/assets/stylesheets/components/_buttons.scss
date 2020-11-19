@@ -7,3 +7,52 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  margin : 14px;
+}
+
+.btn-flat:hover {
+  background: #1EDD88;
+  color: white;
+}
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#1EDD88, #1EDD88);
+  transition: background 0.3s ease;
+  border: 1px solid #1EDD88;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#1EDD88, #1EDD88);
+  color: white;
+}
+
+#login {
+  background-color: white;
+  border: 1px solid #1EDD88;
+  color: black;
+}
+
+.btn-ghost-banner {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}

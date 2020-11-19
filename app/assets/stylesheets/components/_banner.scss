@@ -2,13 +2,14 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  text-align: center;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
 }
 
@@ -17,4 +18,62 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner .container {
+  padding: 35vh;
+  align-items: center;
+
+}
+
+.banner-welcome {
+  background-size: cover;
+  background-position: center;
+
+}
+
+.banner-welcome .container-welcome {
+  padding: 35vh;
+  align-items: center;
+  text-align: center;
+}
+
+.banner-welcome h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.banner-welcome p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.section-banner-show-chompignon {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  display: flex;
+  margin: 150px;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+.img-chompignon {
+  max-width: 50%;
+}
+
+.img-chompignon img {
+  width: 600px;
+}
+
+
+.details-chompignon {
+  padding: 75px;
+  max-width: 50%;
 }
