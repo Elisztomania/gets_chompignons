@@ -56,11 +56,13 @@ html, body {
   box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
 }
 
-.card-description {
+.card-description > a {
   display: block;
-  padding: 1em 0.5em;
-  color: #515151;
+  color: #000000;
   text-decoration: none;
+  background-color: #white;
+  padding: 3px;
+  font-weight: bold;
 }
 
 .card-description > h2 {
@@ -69,4 +71,8 @@ html, body {
 
 .card-description > p {
   margin: 0;
+}
+
+.card-description  {
+  background-color: #white;
 }
