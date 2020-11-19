@@ -65,9 +65,15 @@
   <hr>
 
   <% if @favorite %>
-    <%= link_to 'Supprimer de mes 🍄 favoris', favorite_path(@favorite), method: :delete %>
+
+    <%= link_to favorite_path(@favorite), method: :delete, data: {confirm: 'Supprimer ?'} do %>
+      <i class="fas fa-heart"> </i>
+    <% end %>
+
   <% else %>
-    <%= link_to 'Ajouter à mes 🍄 favoris', mushroom_favorites_path(@mushroom), method: :post %>
+    <%= link_to mushroom_favorites_path(@mushroom), method: :post do %>
+      <i class="far fa-heart"></i>
+    <% end %>
   <% end %>
 
   <hr>
