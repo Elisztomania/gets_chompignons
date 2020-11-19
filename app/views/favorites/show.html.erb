@@ -2,20 +2,21 @@
 
   <div class="card-list-my-chomps">
 
-  <h1>Mes chompignons favoris !</h1>
+  <h1>Mes chompignons favoris ! <i class="fas fa-heart"></i></h1>
 
       <% @fav_champ.each do |mushroom| %>
 
     <div class="card-my-chomps ">
-
+      <%= link_to mushroom do %>
       <% if mushroom.photo.attached? %>
         <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
       <% end %>
 
+
       <div class="card-description-my-chomps">
         <%= link_to mushroom.name, mushroom %>
       </div>
-
+    <% end %>
     </div>
       <% end %>
   </div>

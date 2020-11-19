@@ -10,17 +10,27 @@
   transition: transform 0.1s ease-in-out, box-shadow 0.1s;
 }
 
+.card-my-chomps:hover {
+  transform: translateY(-0.5rem) scale(1.0125);
+  box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+  }
+
 .card-list-my-chomps {
   display: block;
-  margin: 1rem auto;
+  margin-top: 32px;
+  margin-bottom: 42px;
   padding: 0;
   font-size: 0;
   text-align: center;
   list-style: none;
 }
 
-.card-description-my-chomps { 
+.card-description-my-chomps {
   padding: 8px;
+    a {
+    color: #000000;
+    text-decoration: none;
+  }
 }
 
 
