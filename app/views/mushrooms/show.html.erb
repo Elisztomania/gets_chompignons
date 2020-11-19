@@ -1,4 +1,5 @@
-<div class="section-banner-show-chompignon">
+<div class="gros_container">
+  <div class="section-banner-show-chompignon">
   <div class="img-chompignon">
     <% if @mushroom.photo.attached? %>
       <%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
@@ -17,7 +18,7 @@
       <li><strong>Il ne faut pas manger ce champignon !</strong></li>
       <% end %> <br>
     </ul>
-      <div class="btn-fav-fav">
+      <div class="btn-fav-fav center">
       <% if current_user != nil %>
         <% if @favorite %>
           <%= link_to favorite_path(@favorite), method: :delete do %>
@@ -38,8 +39,7 @@
   <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
 <% end %>
 
-<hr>
-
+<div class="section-banner-show-chompignon">
   <h3>Avis</h3>
   <% if @mushroom.reviews.empty? %>
     <p>Soyez la première personne à ajouter un avis</p>
@@ -67,8 +67,7 @@
 <% if current_user != nil %>
   <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
 <% end %>
-
-
-<hr>
+</div>
+</div>
 
 

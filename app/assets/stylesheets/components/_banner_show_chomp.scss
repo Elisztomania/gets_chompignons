@@ -4,11 +4,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
   display: flex;
-  margin: 40px;
+  // margin: 40px;
   justify-content: space-between;
   border-radius: 4px;
 }
-
 
 .img-chompignon img {
   width: 500px;
@@ -17,11 +16,21 @@
   padding: 10px;
 }
 
-
 .details-chompignon {
   padding: 75px;
   max-width: 50%;
 }
 
-.btn-retour {
+.btn-fav-fav {
+  align-items: center;
+  display: right;
+}
+
+.btn-fav-fav .center {
+  height: 100px;
+  line-height: 100px; /* same as height! */
+}
+
+.gros_container {
+  margin: 0px;
 }
