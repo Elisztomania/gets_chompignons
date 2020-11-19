@@ -20,15 +20,17 @@
   <% end %> <br>
 </ul>
 
+
 <% if current_user != nil && current_user == @mushroom.user %>
   <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
+
 <% end %>
 
 <hr>
 
-  <h3>Reviews</h3>
+  <h3>Avis</h3>
   <% if @mushroom.reviews.empty? %>
-    <p>Soyez la première personne à ajouter une review</p>
+    <p>Soyez la première personne à ajouter un avis</p>
   <% else %>
     <ul class="list-group">
       <% @mushroom.reviews.each do |review| %>
@@ -40,7 +42,8 @@
               <% counter += 1 %>
             <% end %>
           </span>
-          <%= review.content %>
+
+          <%= review.content %> par <%= current_user.username %>
           <% if current_user != nil && current_user == review.user %>
           <%= link_to '✏️', edit_mushroom_review_path(review) %>
         <% end %>
@@ -50,7 +53,7 @@
   <% end %>
 
 <% if current_user != nil %>
-  <%= link_to 'Ajouter une review', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
+  <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
 <% end %>
 
 
