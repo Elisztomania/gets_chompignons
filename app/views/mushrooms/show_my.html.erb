@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Mes propres créations chompignons !</h1>
+   <% @mymushrooms.each do |mushroom| %>
+   <hr>
+    <% if mushroom.photo.attached? %>
+      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
+    <% end %>
+    <%= link_to mushroom.name, mushroom %>
+    <%= link_to '✏️', edit_mushroom_path(mushroom) %>
+    <br>
+  <hr>
+  <% end %>
+
+</div>
