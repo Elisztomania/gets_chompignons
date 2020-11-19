@@ -5,36 +5,31 @@
     <% end %>
   </div>
   <div class="details-chompignon">
-    <h2><strong><%= @mushroom.name %></strong></h2><%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️
-    <p>⭐⭐⭐⭐⭐</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque odio praesentium assumenda explicabo reprehenderit hic animi molestiae cupiditate molestias est soluta quae sint ut, iusto repellendus ducimus. Ut, tenetur, placeat.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque odio praesentium assumenda explicabo reprehenderit hic animi molestiae cupiditate molestias est soluta quae sint ut, iusto repellendus ducimus. Ut, tenetur, placeat.</p>
+    <h2><strong><%= @mushroom.name %></strong> - <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️</h2>
+    <ul>
+      <li>Description : <%= @mushroom.content %></li>
+      <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
+      <li>Forme du chapeau : <%= @mushroom.cap %></li>
+
+      <% if @mushroom.eatable %>
+      <li>Ce champignon est <strong>comestible</strong> !</li>
+      <% else %>
+      <li><strong>Il ne faut pas manger ce champignon !</strong></li>
+      <% end %> <br>
+    </ul>
+    <% if current_user != nil %>
+      <% if @favorite %>
+        <%= link_to 'Supprimer de mes 🍄 favoris', favorite_path(@favorite), method: :delete %>
+      <% else %>
+        <%= link_to 'Ajouter à mes 🍄 favoris', mushroom_favorites_path(@mushroom), method: :post %>
+      <% end %>
+    <% end %>
   </div>
 </div>
-
-
-<!-- <h2><%= @mushroom.name %></h2>
-
-<hr>
-<hr>
-
-<ul>
-  <li>Description : <%= @mushroom.content %></li>
-  <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
-  <li>Forme du chapeau : <%= @mushroom.cap %></li>
-  <li>Note moyenne : </li>
-
-  <% if @mushroom.eatable %>
-  <li>Ce champignon est <strong>comestible</strong> !</li>
-  <% else %>
-  <li><strong>Il ne faut pas manger ce champignon !</strong></li>
-  <% end %> <br>
-</ul>
-
+  <div class="btn-retour"><%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %></div>
 
 <% if current_user != nil && current_user == @mushroom.user %>
   <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
-
 <% end %>
 
 <hr>
@@ -69,21 +64,3 @@
 
 
 <hr>
-
-
-  <% if current_user != nil %>
-  <hr>
-
-  <% if @favorite %>
-    <%= link_to 'Supprimer de mes 🍄 favoris', favorite_path(@favorite), method: :delete %>
-  <% else %>
-    <%= link_to 'Ajouter à mes 🍄 favoris', mushroom_favorites_path(@mushroom), method: :post %>
-  <% end %>
-
-  <hr>
-  <% end %>
-
-
-<%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %>
-
- -->
