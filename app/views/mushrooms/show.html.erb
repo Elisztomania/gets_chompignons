@@ -7,10 +7,10 @@
   </div>
   <div class="details-chompignon">
     <h2><strong><%= @mushroom.name %></strong> - <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️</h2>
-    <ul>
-      <li>Description : <%= @mushroom.content %></li>
-      <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
-      <li>Forme du chapeau : <%= @mushroom.cap %></li>
+    <ul class="list-inline">
+      <li class="item">Description : <%= @mushroom.content %></li>
+      <li class="item">Où pousse-t-il ? : <%= @mushroom.location %></li>
+      <li class="item">Forme du chapeau : <%= @mushroom.cap %></li>
 
       <% if @mushroom.eatable %>
       <li>Ce champignon est <strong>comestible</strong> !</li>
@@ -30,8 +30,7 @@
           <% end %>
         <% end %>
       <% end %>
-      <%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %>
-  </div>
+    </div>
   </div>
 </div>
 
@@ -54,7 +53,6 @@
               <% counter += 1 %>
             <% end %>
           </span>
-
           <%= review.content %> par <%= review.user.username %>
           <% if current_user != nil && current_user == review.user %>
           <%= link_to '✏️', edit_mushroom_review_path(review) %>
@@ -68,6 +66,7 @@
   <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
 <% end %>
 </div>
+<div class="back"><%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %></div>
 </div>
 
 
