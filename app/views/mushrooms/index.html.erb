@@ -1,17 +1,6 @@
-<h1>Tous les champigons</h1>
 
 <!-- Banner différente de la home avec CTA -->
+<%= render './shared_huyvu/banner_index' %>
 
-<%= link_to 'Créer un chompignon', new_mushroom_path(@mushroom), class: "btn btn-ghost" %>
+<%= render './shared_huyvu/test_card_chompignon' %>
 
-   <% @mushrooms.each do |mushroom| %>
-   <hr>
-    <% if mushroom.photo.attached? %>
-      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
-    <% end %>
-    <%= link_to mushroom.name, mushroom %>
-     - <%= mushroom.average_rating %> ⭐️
-    <br>
-  <hr>
-  <% end %>
-</div>
