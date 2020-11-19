@@ -31,6 +31,7 @@
 
 .gros_container {
   margin: 0px;
+  padding-bottom: 20px;
 }
 
 .back {
@@ -44,4 +45,30 @@
 
 .list-inline .item {
   padding-bottom: 5px;
+}
+
+.reviews {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 50px 120px 50px 120px;
+  border-radius: 4px;
+  padding-bottom: 20px;
+}
+
+.all-space {
+  padding: auto;
+  // margin-left: -9px;
+  // width: 1130px;
+  max-width: 1130px;
+  align-items: right;
+}
+
+.title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 40px;
+  margin-bottom: -20px;
 }

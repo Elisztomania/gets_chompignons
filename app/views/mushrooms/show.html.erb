@@ -38,14 +38,19 @@
   <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
 <% end %>
 
-<div class="section-banner-show-chompignon">
-  <h3>Avis</h3>
+<div class="reviews">
+  <div class="title"><h3>Avis</h3>
+  <% if current_user != nil %>
+    <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
+  <% end %>
+  </div>
+  <div class="details-chompignon">
   <% if @mushroom.reviews.empty? %>
     <p>Soyez la première personne à ajouter un avis</p>
   <% else %>
     <ul class="list-group">
       <% @mushroom.reviews.each do |review| %>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+        <li class="list-group-item d-flex justify-content-between all-space">
           <span class="badge badge-primary badge-pill">
             <% counter = 0 %>
             <% 5.times do %>
@@ -54,6 +59,7 @@
             <% end %>
           </span>
           <%= review.content %> par <%= review.user.username %>
+  </div>
           <% if current_user != nil && current_user == review.user %>
           <%= link_to '✏️', edit_mushroom_review_path(review) %>
         <% end %>
@@ -62,9 +68,6 @@
     </ul>
   <% end %>
 
-<% if current_user != nil %>
-  <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
-<% end %>
 </div>
 <div class="back"><%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %></div>
 </div>
