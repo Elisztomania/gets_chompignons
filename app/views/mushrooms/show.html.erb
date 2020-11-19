@@ -1,5 +1,4 @@
-<h2><%= @mushroom.name %>
-  <%= link_to '✏️', edit_mushroom_path(@mushroom.id) %></h2>
+<h2><%= @mushroom.name %></h2>
 
 <hr>
 
@@ -21,7 +20,9 @@
   <% end %> <br>
 </ul>
 
-<% if current_user != nil && current_user.id == @mushroom.user_id %>
+
+<% if current_user != nil && current_user == @mushroom.user %>
+  <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
 
 <% end %>
 
@@ -41,8 +42,11 @@
               <% counter += 1 %>
             <% end %>
           </span>
-          "<%= review.content %>"
-          par <%= current_user.username %>
+
+          <%= review.content %> par <%= current_user.username %>
+          <% if current_user != nil && current_user == review.user %>
+          <%= link_to '✏️', edit_mushroom_review_path(review) %>
+        <% end %>
         </li>
       <% end %>
     </ul>
