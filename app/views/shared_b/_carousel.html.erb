@@ -8,32 +8,12 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
-
-      
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="https://images.unsplash.com/photo-1604586180720-fb538b3b47d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="First slide">
+      <% @top5.each_with_index do |mushroom, index| %> 
+        <div class="carousel-item <%="active" if index == 0 %> ">
+          <%= cl_image_tag mushroom.photo.key, height: 300, width: 300, crop: :fill %>
+          <%= mushroom.name %>
         </div>
-      
-
-      
-        <div class="carousel-item">
-          <img class="d-block w-100" src="https://images.unsplash.com/photo-1542417938-e59c0a54102b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Second slide">
-        </div>
-      
-
-      
-        <div class="carousel-item">
-          <img class="d-block w-100" src="https://images.unsplash.com/photo-1541296093088-f079b71d3478?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80" alt="Third slide">
-        </div>
-      
-      
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1603956909142-7d5aa8c9911d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="Fourth slide">
-      </div>
-      
-      <div class="carousel-item">
-        <img class="d-block w-100" src="https://images.unsplash.com/photo-1604657344408-587897a8cf4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="Fifth slide">
-      </div>
+      <% end %>  
     
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
