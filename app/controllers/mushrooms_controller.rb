@@ -1,6 +1,6 @@
 class MushroomsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_mushroom, only: [:show, :edit, :update]
+  before_action :set_mushroom, only: [:show, :edit, :update, :average_rating]
 
   def index
     @mushrooms = Mushroom.all
@@ -12,6 +12,7 @@ class MushroomsController < ApplicationController
 
   def show
     @favorite = @mushroom.favorites.find_by(user: current_user)
+    @average = average_rating
   end
 
   def create
@@ -37,6 +38,18 @@ class MushroomsController < ApplicationController
 
   def show_my
     @mymushrooms = Mushroom.where(user: current_user)
+  end
+
+  def average_rating
+    # return unless @mushroom.reviews != 0
+
+    nbreviews = 0
+    sum = 0
+    @mushroom.reviews.each do |review|
+      sum += review.rating
+      nbreviews += 1
+    end
+    @average = sum.fdiv(nbreviews).round(1)
   end
 
   private
