@@ -4,7 +4,6 @@ class MushroomsController < ApplicationController
 
   def index
     @mushrooms = Mushroom.all
-    @top5 = top5
   end
 
   def new
