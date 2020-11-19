@@ -1,18 +1,28 @@
-<h2><%= @mushroom.name %></h2>
+<div class="section-banner-show-chompignon">
+  <div class="img-chompignon">
+    <% if @mushroom.photo.attached? %>
+      <%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="details-chompignon">
+    <h2><strong><%= @mushroom.name %></strong></h2><%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️
+    <p>⭐⭐⭐⭐⭐</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque odio praesentium assumenda explicabo reprehenderit hic animi molestiae cupiditate molestias est soluta quae sint ut, iusto repellendus ducimus. Ut, tenetur, placeat.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque odio praesentium assumenda explicabo reprehenderit hic animi molestiae cupiditate molestias est soluta quae sint ut, iusto repellendus ducimus. Ut, tenetur, placeat.</p>
+  </div>
+</div>
+
+
+<!-- <h2><%= @mushroom.name %></h2>
 
 <hr>
-
-  <% if @mushroom.photo.attached? %>
-    <%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
-  <% end %>
-
 <hr>
 
 <ul>
   <li>Description : <%= @mushroom.content %></li>
   <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
   <li>Forme du chapeau : <%= @mushroom.cap %></li>
-  <li>Note moyenne : <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️</li>
+  <li>Note moyenne : </li>
 
   <% if @mushroom.eatable %>
   <li>Ce champignon est <strong>comestible</strong> !</li>
@@ -76,3 +86,4 @@
 
 <%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %>
 
+ -->

@@ -1,0 +1,24 @@
+.section-banner-show-chompignon {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
+  display: flex;
+  margin: 150px;
+  justify-content: space-between;
+  border-radius: 4px;
+}
+
+
+.img-chompignon img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  padding: 10px;
+}
+
+
+.details-chompignon {
+  padding: 75px;
+  max-width: 50%;
+}
