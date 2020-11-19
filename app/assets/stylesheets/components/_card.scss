@@ -1,13 +1,17 @@
 // card chompignons favorites & all my chompignons
 .card-my-chomps {
   display: inline-block;
-  max-width: 20rem;
+  width: 280px;
   margin: 1rem;
   font-size: 1rem;
   text-decoration: none;
   overflow: hidden;
   box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
   transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+    img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .card-my-chomps:hover {
@@ -17,8 +21,7 @@
 
 .card-list-my-chomps {
   display: block;
-  margin-top: 32px;
-  margin-bottom: 42px;
+  margin: 32px 60px 82px 60px;
   padding: 0;
   font-size: 0;
   text-align: center;
@@ -30,6 +33,7 @@
     a {
     color: #000000;
     text-decoration: none;
+    font-weight: bolder;
   }
 }
 

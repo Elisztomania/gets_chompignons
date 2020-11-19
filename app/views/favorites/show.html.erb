@@ -1,5 +1,4 @@
 
-
   <div class="card-list-my-chomps">
 
   <h1>Mes chompignons favoris ! <i class="fas fa-heart"></i></h1>
@@ -9,7 +8,7 @@
     <div class="card-my-chomps ">
       <%= link_to mushroom do %>
       <% if mushroom.photo.attached? %>
-        <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
+        <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
       <% end %>
 
 
