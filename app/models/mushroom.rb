@@ -12,4 +12,16 @@ class Mushroom < ApplicationRecord
   validates :location, presence: true, inclusion: { in: LOCATIONS }
   validates :cap, inclusion: { in: CAP }
   validates :user, presence: true
+
+  def average_rating
+    return unless reviews != 0
+
+    nbreviews = 0
+    sum = 0
+    reviews.each do |review|
+      sum += review.rating
+      nbreviews += 1
+    end
+      sum.fdiv(nbreviews).to_i unless nbreviews.zero?
+  end
 end

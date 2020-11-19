@@ -12,7 +12,7 @@
   <li>Description : <%= @mushroom.content %></li>
   <li>Où pousse-t-il ? : <%= @mushroom.location %></li>
   <li>Forme du chapeau : <%= @mushroom.cap %></li>
-  <li>Note moyenne : <%= @average %> ⭐️ ★ ☆</li>
+  <li>Note moyenne : <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️</li>
 
   <% if @mushroom.eatable %>
   <li>Ce champignon est <strong>comestible</strong> !</li>
