@@ -34,5 +34,20 @@ russule = { name: "Russule Jolie", content: "La chair, blanche et ferme, a une s
   puts "Created #{mushroom.name}"
 end
 
+10.times do
+  review = Review.new(rating: rand(0..5), content: "trop trop ce chomp")
+  review.mushroom = Mushroom.all.sample
+  review.user = user
+  review.save!
+  puts "Created reviews"
+end
+
 puts 'Finished!'
+
+
+
+
+
+
+
 

@@ -44,7 +44,7 @@
             <% end %>
           </span>
 
-          <%= review.content %> par <%= current_user.username %>
+          <%= review.content %> par <%= review.user.username %>
           <% if current_user != nil && current_user == review.user %>
           <%= link_to '✏️', edit_mushroom_review_path(review) %>
         <% end %>
