@@ -34,7 +34,7 @@ russule = { name: "Russule Jolie", content: "La chair, blanche et ferme, a une s
   puts "Created #{mushroom.name}"
 end
 
-reviews_manuelles = ["Très joli, beaucoup de délicatesse dans ce champignon, bravo Mère Nature !", "Un peu déçu de la forme du chapeau.....", "Un nom comme ça, ça donne super envie !", "Moi qui pensait qu'on en trouvait que sur des sols calcaire!! Merci des infos ;)", "J'adore 🥰", "Pas ouf... j'ai jamais aimé les champignons de toutes façons", "Ce champignon a deux facettes, bien qu'il soit adorable à l'extérieur, goût est exécrable. On appelle ça de la publicité mensongère.", "Super ! Aussi beau que les girolles ardéchoises 👍", "Sympa", "Cool", "Lourd"]
+reviews_manuelles = ["Très joli, beaucoup de délicatesse dans ce champignon, bravo Mère Nature !", "Un peu déçu de la forme du chapeau.....", "Un nom comme ça, ça donne super envie !", "Moi qui pensait qu'on en trouvait que sur des sols calcaire!! Merci des infos ;)", "J'adore 🥰", "Pas ouf... j'ai jamais aimé les champignons de toutes façons", "Ce champignon a deux facettes, bien qu'il soit adorable à l'extérieur, le goût est exécrable.", "Super ! Aussi beau que les girolles ardéchoises 👍", "Sympa", "Cool", "Lourd"]
 
 10.times do
   review = Review.new(rating: rand(1..5), content: reviews_manuelles.sample)
