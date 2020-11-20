@@ -61,18 +61,28 @@ html, body {
   color: #000000;
   text-decoration: none;
   background-color: #white;
-  padding: 3px;
   font-weight: bold;
 }
 
-.card-description > h2 {
-  margin: 0 0 0.5em;
-}
 
-.card-description > p {
-  margin: 0;
-}
-
-.card-description  {
+.card-description {
   background-color: #white;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
+.rating-card {
+  padding-right: 45px;
+}
+
+
+
+
+
+
+
+
+
+
