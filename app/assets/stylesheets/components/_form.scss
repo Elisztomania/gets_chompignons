@@ -315,24 +315,42 @@ input {
   padding: 50px 30px 0;
 }
 
-.col-md-8 {
-  background-color: white;
-  margin-top: 50px;
-  margin-left: 350px;
-  margin-right: 350px;
-  padding-right: 350px;
-  padding-left: 350px;
-}
+
 
 .input-form {
   font-size: 50px;
 }
 
+.col-md-8 {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.col-md-8 h1 {
+  color: white;
+}
 
 .container-new {
   border: 1px, solid, black;
 }
 
+.form-inputs {
+  color: #fff;
+  margin: 0 auto;
+  max-width: 550px;
+  margin-top: 5vh;
+  position: relative;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 5px;
+  border: 1px solid #ff9f1c;
+  position: relative;
+  }
 
+.justify-content-center {
+    justify-content: center !important;
+    background-image: url("https://images.unsplash.com/photo-1505567745926-ba89000d255a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
+}
 
 
