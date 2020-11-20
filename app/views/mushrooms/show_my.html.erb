@@ -1,14 +1,34 @@
-<div class="container">
-  <h1>Mes propres créations chompignons !</h1>
+
+
+<div class="card-list-my-chomps">
+
+
+  <h1>Mes propres créations chompignons ! <i class="fas fa-magic"></i></h1>
+
    <% @mymushrooms.each do |mushroom| %>
-   <hr>
-    <% if mushroom.photo.attached? %>
-      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
-    <% end %>
-    <%= link_to mushroom.name, mushroom %>
-    <%= link_to '✏️', edit_mushroom_path(mushroom) %>
-    <br>
-  <hr>
+
+    <div class="card-my-chomps">
+
+      <%= link_to mushroom do %>
+
+        <% if mushroom.photo.attached? %>
+          <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
+        <% end %>
+
+        <div class="card-description-my-chomps">
+          <%= mushroom.name %>
+         <!-- <%= link_to '✏️', edit_mushroom_path(mushroom) %> -->
+          <%= link_to edit_mushroom_path(mushroom) do %>
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+        </div>
+
+  <% end %>
+   </div>
   <% end %>
 
+</div>
+
+<div class="center-btn">
+  <%= link_to 'Voir tous les chompignons', mushrooms_path, class: "btn btn-ghost-margtop" %>
 </div>
