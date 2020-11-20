@@ -1,3 +1,49 @@
+// card chompignons favorites & all my chompignons
+.card-my-chomps {
+  display: inline-block;
+  width: 280px;
+  margin: 1rem;
+  margin-top: 32px;
+  font-size: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+  text-align: center;
+    img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.card-my-chomps:hover {
+  transform: translateY(-0.5rem) scale(1.0125);
+  box-shadow: 0 0.5em 3rem -1rem rgba(0,0,0,0.5);
+  }
+
+.card-list-my-chomps {
+  display: block;
+  margin: 52px 60px 32px 60px;
+  padding: 0;
+  font-size: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.card-description-my-chomps {
+  padding: 8px;
+    a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bolder;
+  }
+}
+
+
+
+
+// autres cards
+
 .card-product {
   overflow: hidden;
   background: white;

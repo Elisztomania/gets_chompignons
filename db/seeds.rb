@@ -14,7 +14,7 @@ Review.destroy_all
 
 puts 'Creating user...'
 
-user = User.create(username:"Elisztomania", email:"elisztomania@gmail.com", password:"totooo")
+user = User.create(username:"Mère Nature", email:"elisztomania@gmail.com", password:"totooo")
 
 puts 'Creating mushrooms...'
 amanite = { name: "Amanite Tue-Mouches", content: "L’Amanite tue-mouche provoque de violents troubles digestifs et nerveux, qui se manifestent par un état d’ivresse suivi d’un profond sommeil.", location: "Bois de feuillus", eatable: false, cap: "Convexe" }
@@ -34,8 +34,10 @@ russule = { name: "Russule Jolie", content: "La chair, blanche et ferme, a une s
   puts "Created #{mushroom.name}"
 end
 
+reviews_manuelles = ["Très joli, beaucoup de délicatesse dans ce champignon, bravo Mère Nature !", "Un peu déçu de la forme du chapeau.....", "Un nom comme ça, ça donne super envie !", "Moi qui pensait qu'on en trouvait que sur des sols calcaire!! Merci des infos ;)", "J'adore 🥰", "Pas ouf... j'ai jamais aimé les champignons de toutes façons", "Ce champignon a deux facettes, bien qu'il soit adorable à l'extérieur, goût est exécrable. On appelle ça de la publicité mensongère.", "Super ! Aussi beau que les girolles ardéchoises 👍", "Sympa", "Cool", "Lourd"]
+
 10.times do
-  review = Review.new(rating: rand(0..5), content: "trop trop ce chomp")
+  review = Review.new(rating: rand(1..5), content: reviews_manuelles.sample)
   review.mushroom = Mushroom.all.sample
   review.user = user
   review.save!

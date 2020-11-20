@@ -19,7 +19,7 @@ class MushroomsController < ApplicationController
     @mushroom = Mushroom.new(mushroom_params)
     @mushroom.user = current_user
     if @mushroom.save
-      redirect_to @mushroom, notice: 'Mushroom was successfully created 🍄'
+      redirect_to @mushroom
     else
       render :new
     end
@@ -30,7 +30,7 @@ class MushroomsController < ApplicationController
 
   def update
     if @mushroom.update(mushroom_params)
-      redirect_to @mushroom, notice: 'Mushroom was successfully updated 🍄'
+      redirect_to @mushroom, notice: 'Votre champignon est bien modifié 🍄'
     else
       render :edit
     end

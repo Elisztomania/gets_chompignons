@@ -1,13 +1,28 @@
-<div class="container">
-  <h1>Mes chompignons favoris !</h1>
-   <% @fav_champ.each do |mushroom| %>
-   <hr>
-    <% if mushroom.photo.attached? %>
-      <%= cl_image_tag mushroom.photo.key, height: 200, width: 200, crop: :fill %>
-    <% end %>
-    <%= link_to mushroom.name, mushroom %>
-    <br>
-  <hr>
-  <% end %>
 
-</div>
+  <div class="card-list-my-chomps">
+
+  <h1>Mes chompignons favoris ! <i class="fas fa-heart"></i></h1>
+
+      <% @fav_champ.each do |mushroom| %>
+
+    <div class="card-my-chomps ">
+      <%= link_to mushroom do %>
+      <% if mushroom.photo.attached? %>
+        <%= cl_image_tag mushroom.photo.key, height: 320, width: 320, crop: :fill %>
+      <% end %>
+
+
+      <div class="card-description-my-chomps">
+        <%= link_to mushroom.name, mushroom %>
+      </div>
+    <% end %>
+    </div>
+      <% end %>
+
+  </div>
+
+  <div class="center-btn">
+    <%= link_to 'Voir tous les chompignons', mushrooms_path, class: "btn btn-ghost-margtop" %>
+  </div>
+
+

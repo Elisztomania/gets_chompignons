@@ -1,9 +1,9 @@
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: rgb(215, 108, 113);
+  border: 1px solid rgb(215, 108, 113);
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: bolder;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
@@ -55,4 +55,22 @@
   border-radius: 50px;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+}
+
+// BTN de la page FAV & MYCHOMPS
+
+.btn-ghost-margtop {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-top: 32px;
+}
+
+.center-btn {
+  text-align: center;
+  margin: 0 0 42px 0;
 }
