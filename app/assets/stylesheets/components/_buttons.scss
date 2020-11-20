@@ -64,10 +64,16 @@
   border: 1px solid rgb(215, 108, 113);
   padding: 8px 24px;
   border-radius: 50px;
-  font-weight: lighter;
+  font-weight: bolder;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-top: 32px;
+}
+
+.btn-ghost-margtop:hover {
+  color: rgb(215, 108, 113);
+  text-decoration: none;
+  opacity: 1;
 }
 
 .center-btn {

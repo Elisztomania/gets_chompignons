@@ -1,3 +1,8 @@
+.container-combi {
+  width: 1100px;
+  margin: 40px auto;
+}
+
 .section-banner-show-chompignon {
   overflow: hidden;
   background: white;
@@ -10,16 +15,20 @@
 }
 
 .img-chompignon img {
-  width: 550px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
   padding: 10px;
 }
 
 .details-chompignon {
-  padding-right: 160px;
-  margin-top: 30px;
+  padding: 16px 16px;
   max-width: 70%;
+    h2 {
+      text-align: center;
+      padding-bottom: 16px;
+      padding-top: 16px;
+    }
 }
 
 .btn-fav-fav {
@@ -65,5 +74,12 @@
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 40px;
-  margin-bottom: -20px;
+    h2 {
+      margin: 8px 0 0 0;
+    }
+}
+
+.badge {
+  background-color: rgb(215, 108, 113);
+  align-items: center;
 }
