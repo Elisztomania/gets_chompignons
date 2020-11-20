@@ -25,13 +25,13 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #1EDD88;
+  background: rgb(215, 108, 113);
   transition: background 0.3s ease;
   margin : 14px;
 }
 
 .btn-flat:hover {
-  background: #1EDD88;
+  background: rgb(215, 108, 113);
   color: white;
 }
 
@@ -40,29 +40,33 @@
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#1EDD88, #1EDD88);
+  background: linear-gradient(rgb(215, 108, 113), rgb(215, 108, 113));
   transition: background 0.3s ease;
-  border: 1px solid #1EDD88;
+  border: 1px solid rgb(215, 108, 113);
 }
 
 .btn-gradient:hover {
-  background: linear-gradient(#1EDD88, #1EDD88);
+  background: linear-gradient(rgb(215, 108, 113), rgb(215, 108, 113));
   color: white;
 }
 
 #login {
   background-color: white;
-  border: 1px solid #1EDD88;
+  border: 1px solid rgb(215, 108, 113);
   color: black;
 }
 
 .btn-ghost-banner {
-  color: white;
-  border: 1px solid white;
+  color: rgb(215, 108, 113);
+  border: 1px solid rgb(215, 108, 113);
   padding: 8px 24px;
   border-radius: 50px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.btn-ghost-banner:hover {
+  background-color: rgb(215, 108, 113);
+  color: white;
 }
 
 // BTN de la page FAV & MYCHOMPS
