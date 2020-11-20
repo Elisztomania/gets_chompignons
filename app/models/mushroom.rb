@@ -23,7 +23,7 @@ class Mushroom < ApplicationRecord
       sum += review.rating
       nbreviews += 1
     end
-      sum.fdiv(nbreviews).to_i unless nbreviews.zero?
+      sum.fdiv(nbreviews).round(1) unless nbreviews.zero?
     end
   end
 end
