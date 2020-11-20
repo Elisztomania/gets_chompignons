@@ -5,7 +5,7 @@
 <%= simple_form_for [@mushroom, @review] do |f| %>
    <%= f.input :rating, collection: 0..5, label: 'Note sur 5' %>
    <%= f.input :content, label: 'Avis' %>
-   <%= f.button :submit, class: 'btn-form' %>
+   <%= f.button :submit, "Ajouter mon avis", class: 'btn-form' %>
 
 <% end %>
 
