@@ -3,19 +3,24 @@
   background: white;
 }
 
+.navbar-brand {
+  display: flex;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  display: flex;
 }
 
 .nav-link {
     color: black;
     text-decoration: none;
     background-color: transparent;
-    font-size: 17px;
+    font-size: 15px;
     // font-family: Montserrat;
     font-weight: 400;
 }
@@ -25,7 +30,8 @@
   line-height: 70px; /* same as height! */
 }
 
-.center h1 {
-  height: 70px;
-  line-height: 70px; /* same as height! */
+.navbar h2 {
+  text-align: left;
 }
+
+
