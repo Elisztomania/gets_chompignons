@@ -1,0 +1,26 @@
+
+<div class="form-inputs">
+
+<%= simple_form_for @mushroom do |f| %>
+  <div class="name-form">
+    <%= f.input :name, label: 'Nom'  %>
+    </div>
+    <%= f.input :content, label: 'Description'  %>
+    <%= f.input :location, collection: Mushroom::LOCATIONS, label: 'Localisation'  %>
+
+    <%= f.input :cap, collection: Mushroom::CAP, label: 'Type de chapeau'  %>
+
+    <% f.object.new_record? %>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :eatable %> Comestible ?
+        </label>
+      </div>
+      <br>
+      <%= f.input :photo, as: :file %>
+      <br>
+    <%= f.button :submit, 'Créer mon chompignon', class: 'btn-form'  %>
+<% end %>
+
+
+</div>
