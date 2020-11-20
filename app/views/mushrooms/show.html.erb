@@ -1,76 +1,106 @@
 <div class="gros_container">
-  <div class="section-banner-show-chompignon">
-  <div class="img-chompignon">
-    <% if @mushroom.photo.attached? %>
-      <%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
-    <% end %>
-  </div>
-  <div class="details-chompignon">
-    <h2><strong><%= @mushroom.name %></strong> - <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> ⭐️</h2>
-    <ul class="list-inline">
-      <li class="item">Description : <%= @mushroom.content %></li>
-      <li class="item">Où pousse-t-il ? : <%= @mushroom.location %></li>
-      <li class="item">Forme du chapeau : <%= @mushroom.cap %></li>
 
-      <% if @mushroom.eatable %>
-      <li>Ce champignon est <strong>comestible</strong> !</li>
-      <% else %>
-      <li><strong>Il ne faut pas manger ce champignon !</strong></li>
-      <% end %> <br>
-    </ul>
-      <div class="btn-fav-fav center">
-      <% if current_user != nil && current_user == @mushroom.user %>
-        <h2><%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "" %><h2>
-      <% end %>
-      <% if current_user != nil %>
-        <% if @favorite %>
-          <%= link_to favorite_path(@favorite), method: :delete do %>
-            <i class="fas fa-heart"> </i>
-          <% end %>
-        <% else %>
-          <%= link_to mushroom_favorites_path(@mushroom), method: :post do %>
-            <i class="far fa-heart"></i>
-          <% end %>
+  <div class="container-combi">
+
+    <div class="section-banner-show-chompignon">
+
+      <div class="img-chompignon">
+        <% if @mushroom.photo.attached? %>
+          <%= cl_image_tag @mushroom.photo.key, height: 400, width: 400, crop: :fill %>
         <% end %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="reviews">
-  <div class="title"><h3>Avis</h3>
-  <% if current_user != nil %>
-    <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
-  <% end %>
-  </div>
-  <div class="details-chompignon">
-  <% if @mushroom.reviews.empty? %>
-    <p>Soyez la première personne à ajouter un avis</p>
-  <% else %>
-    <ul class="list-group max-width">
-      <% @mushroom.reviews.each do |review| %>
-        <li class="list-group-item d-flex justify-content-between max-width">
-          <span class="badge badge-primary badge-pill">
-            <% counter = 0 %>
-            <% 5.times do %>
-              <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
-              <% counter += 1 %>
-            <% end %>
-          </span>
-          <%= review.content %> par <%= review.user.username %>
       </div>
-          <% if current_user != nil && current_user == review.user %>
-          <%= link_to '✏️', edit_mushroom_review_path(review) %>
-        <% end %>
-        </li>
+
+
+      <div class="details-chompignon">
+
+            <div class="edit-icon">
+              <% if current_user != nil && current_user == @mushroom.user %>
+                <!-- <%= link_to '✏️', edit_mushroom_path(@mushroom.id) %> -->
+                <%= link_to edit_mushroom_path(@mushroom.id) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                <% end %>
+              <% end %>
+            </div>
+
+        <h2><strong><%= @mushroom.name %></strong> - <%= @mushroom.average_rating if @mushroom.average_rating > 0 %> <i class="fas fa-star"></i></h2>
+        <ul class="list-inline">
+          <li class="item">Description : <%= @mushroom.content %></li>
+          <li class="item">Où pousse-t-il ? : <%= @mushroom.location %></li>
+          <li class="item">Forme du chapeau : <%= @mushroom.cap %></li>
+
+          <% if @mushroom.eatable %>
+          <li>Ce champignon est <strong>comestible</strong> !</li>
+          <% else %>
+          <li><strong>Il ne faut pas manger ce champignon !</strong></li>
+          <% end %>
+        </ul>
+
+
+          <div class="btn-fav-fav">
+          <% if current_user != nil %>
+            <% if @favorite %>
+              <%= link_to favorite_path(@favorite), method: :delete do %>
+                <i class="fas fa-heart"> </i>
+              <% end %>
+            <% else %>
+              <%= link_to mushroom_favorites_path(@mushroom), method: :post do %>
+                <i class="far fa-heart"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+          </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="reviews">
+
+      <div class="title"><h2>Avis</h2>
+      <% if current_user != nil %>
+        <%= link_to 'Ajouter un avis', new_mushroom_review_path(@mushroom.id), class: "btn btn-ghost" %>
       <% end %>
-    </ul>
-  <% end %>
+      </div>
 
-</div>
-<div class="back"><%= link_to 'Retour', mushrooms_path, class: "btn btn-ghost" %></div>
-</div>
+      <div class="details-chompignon">
 
+      <% if @mushroom.reviews.empty? %>
+        <p>Soyez la première personne à ajouter un avis</p>
+
+      <% else %>
+
+        <ul class="list-group">
+
+          <% @mushroom.reviews.each do |review| %>
+            <li class="list-group-item d-flex justify-content-between">
+              <span class="badge badge-primary badge-pill">
+                <% counter = 0 %>
+                <% 5.times do %>
+                  <i class="fa <%= review.rating > counter ? 'fa-star' : 'fa-star-o' %>"></i>
+                  <% counter += 1 %>
+                <% end %>
+              </span>
+              <%= review.content %> par <%= review.user.username %>
+
+
+            <% if current_user != nil && current_user == review.user %>
+              <%= link_to edit_mushroom_review_path(review) do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+            <% end %>
+            </li>
+
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="center-btn">
+      <%= link_to 'Retour', mushrooms_path, class: "btn-ghost-margtop" %>
+    </div>
+</div>
 
