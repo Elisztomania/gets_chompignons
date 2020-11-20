@@ -2,10 +2,6 @@
 //   border-radius: 25%;
 // }
 
-.carousel-inner {
-    background-color: rgba(204, 181, 181, 0.233)
- }
-
 .carousel-item img{
     width: auto;
     height: 400px;
@@ -17,7 +13,9 @@
 
 .container-carousel {
     padding-left: 60px;
+    padding-top: 20px;
     padding-right: 60px;
+    height: 550px;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2); 
 }
@@ -25,6 +23,7 @@
 .container-shared-carousel {
     margin-left: 500px;
     margin-right: 500px;
+    margin-bottom: 150px;
     width: auto;
     height: 400px;
     max-height: 400px;
@@ -34,10 +33,33 @@
 
 .container-carousel .title_top {
     text-align: center;
-    color: #1EDD88;
+    color:rgb(215, 108, 113);
     font-size: 2em;
     font-weight: bold;
+    padding-bottom: 15px;
     margin: auto;
     font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
+.gig-review {
+    display: flex;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+.fa-star {
+    color:rgb(215, 108, 113);
+}
+
+// .mushroom-name .a {
+//     text-decoration: none;
+//     font-weight: bold;
+//     color: black
+// }
+.mushroom-name > a {
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    background-color: #white;
+    font-weight: bold;
+  }
