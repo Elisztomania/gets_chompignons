@@ -3,11 +3,13 @@
   display: inline-block;
   width: 280px;
   margin: 1rem;
+  margin-top: 32px;
   font-size: 1rem;
   text-decoration: none;
   overflow: hidden;
   box-shadow: 0 0 3rem -1rem rgba(0,0,0,0.5);
   transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+  text-align: center;
     img {
     display: block;
     width: 100%;
@@ -21,7 +23,7 @@
 
 .card-list-my-chomps {
   display: block;
-  margin: 32px 60px 82px 60px;
+  margin: 52px 60px 32px 60px;
   padding: 0;
   font-size: 0;
   text-align: center;
