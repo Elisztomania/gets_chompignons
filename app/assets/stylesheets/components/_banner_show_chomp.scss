@@ -1,3 +1,18 @@
+.container-combi {
+  width: 900px;
+  margin: 40px auto;
+}
+
+.list-group-item {
+  width: 100%;
+}
+
+.edit-icon {
+  text-align: right;
+  position: relative;
+  bottom: 35px;
+}
+
 .section-banner-show-chompignon {
   overflow: hidden;
   background: white;
@@ -5,27 +20,32 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 50px 120px 50px 120px;
+  margin: 0 auto;
+  margin-bottom: 40px;
   border-radius: 4px;
 }
 
 .img-chompignon img {
-  width: 550px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
   padding: 10px;
 }
 
 .details-chompignon {
-  padding-right: 160px;
-  margin-top: 30px;
-  max-width: 70%;
+  padding: 16px 16px;
+  max-width: 100%;
+    h2 {
+      text-align: center;
+      padding-bottom: 16px;
+      padding-top: 16px;
+    }
 }
 
 .btn-fav-fav {
-  padding-left: 95%;
-  padding-top: 8%;
-  display: right;
+  text-align: right;
+  position: relative;
+  top: 35px;
 }
 
 .gros_container {
@@ -49,9 +69,8 @@
 .reviews {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 50px 120px 50px 120px;
   border-radius: 4px;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .max-width {
@@ -62,8 +81,15 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 40px;
-  margin-bottom: -20px;
+  margin: 0 auto;
+  padding-bottom: 25px;
+    h2 {
+      margin: 8px 0 0 0;
+    }
+}
+
+.badge {
+  background-color: rgb(215, 108, 113);
+  align-items: center;
+  padding-top: 5px;
 }
