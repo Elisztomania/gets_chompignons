@@ -10,15 +10,14 @@
 }
 
 .img-chompignon img {
-  width: 400px;
+  width: 550px;
   height: 400px;
   object-fit: cover;
   padding: 10px;
 }
 
 .details-chompignon {
-  margin-left: 40px;
-  margin-right: 50px;
+  margin-right: 160px;
   margin-top: 30px;
   max-width: 70%;
 }
@@ -55,12 +54,12 @@
   padding-bottom: 20px;
 }
 
-.all-space {
-  padding: auto;
-  // margin-left: -9px;
-  // width: 1130px;
-  max-width: 1130px;
-  align-items: right;
+.max-width {
+  // padding: auto;
+  // // margin-left: -9px;
+  width: 1120px;
+  // // max-width: 1130px;
+  // align-items: right;
 }
 
 .title {

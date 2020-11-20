@@ -19,6 +19,9 @@
       <% end %> <br>
     </ul>
       <div class="btn-fav-fav center">
+      <% if current_user != nil && current_user == @mushroom.user %>
+        <h2><%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "" %><h2>
+      <% end %>
       <% if current_user != nil %>
         <% if @favorite %>
           <%= link_to favorite_path(@favorite), method: :delete do %>
@@ -34,9 +37,7 @@
   </div>
 </div>
 
-<% if current_user != nil && current_user == @mushroom.user %>
-  <%= link_to '✏️', edit_mushroom_path(@mushroom.id), class: "btn btn-ghost" %>
-<% end %>
+
 
 <div class="reviews">
   <div class="title"><h3>Avis</h3>
@@ -48,9 +49,9 @@
   <% if @mushroom.reviews.empty? %>
     <p>Soyez la première personne à ajouter un avis</p>
   <% else %>
-    <ul class="list-group">
+    <ul class="list-group max-width">
       <% @mushroom.reviews.each do |review| %>
-        <li class="list-group-item d-flex justify-content-between all-space">
+        <li class="list-group-item d-flex justify-content-between max-width">
           <span class="badge badge-primary badge-pill">
             <% counter = 0 %>
             <% 5.times do %>
@@ -59,7 +60,7 @@
             <% end %>
           </span>
           <%= review.content %> par <%= review.user.username %>
-  </div>
+      </div>
           <% if current_user != nil && current_user == review.user %>
           <%= link_to '✏️', edit_mushroom_review_path(review) %>
         <% end %>
