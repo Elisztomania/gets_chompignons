@@ -15,8 +15,29 @@
     // border-radius: 50%;
 }
 
-.container {
+.container-carousel {
     padding-left: 60px;
     padding-right: 60px;
     border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
 }
+
+.container-shared-carousel {
+    margin-left: 500px;
+    margin-right: 500px;
+    width: auto;
+    height: 400px;
+    max-height: 400px;
+    /* margin: auto; */
+    display: block;
+}
+
+.container-carousel .title_top {
+    text-align: center;
+    color: #1EDD88;
+    font-size: 2em;
+    font-weight: bold;
+    margin: auto;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+}
+
