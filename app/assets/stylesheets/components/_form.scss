@@ -19,7 +19,7 @@
 }
 
 .col-md-8 h1 {
-  color: white;
+color: rgb(215, 108, 113);
 }
 
 .container-new {
@@ -36,13 +36,16 @@
   background-color: rgba(0,0,0,0.5);
   padding: 40px;
   border-radius: 5px;
-  border: 1px solid #ff9f1c;
+  border: 1px solid rgb(215, 108, 113);
   position: relative;
   }
 
 .justify-content-center {
     justify-content: center !important;
-    background-image: url("https://images.unsplash.com/photo-1505567745926-ba89000d255a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
+    background-image: url("https://images.unsplash.com/uploads/1413498871926cd3b6e26/ed97bcc9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80");
 }
 
 
+#title-new-mush h1 {
+  color: rgb(215, 108, 113);
+}
