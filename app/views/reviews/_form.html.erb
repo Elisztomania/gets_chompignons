@@ -1,5 +1,16 @@
+
+
+<div class="form-inputs">
+
 <%= simple_form_for [@mushroom, @review] do |f| %>
-    <%= f.input :rating, collection: 0..5 %>
-    <%= f.input :content %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
+   <%= f.input :rating, collection: 0..5, label: 'Note sur 5' %>
+   <%= f.input :content, label: 'Avis' %>
+   <%= f.button :submit, class: 'btn btn-flat' %>
+
 <% end %>
+
+
+</div>
+
+
+
